@@ -11,7 +11,7 @@ setuptools.setup(
     description="Simple background tasks for Django",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/geekforbrains/django-workers",
+    url="https://github.com/Mrucznik/django-workers",
     packages=setuptools.find_packages(),
     classifiers=(
         "Programming Language :: Python :: 3",
