@@ -22,6 +22,7 @@ class Task(models.Model):
     handler = models.CharField(max_length=255, db_index=True)
     args = models.TextField(blank=True)
     kwargs = models.TextField(blank=True)
+    result = models.JSONField(blank=True)
     error = models.TextField(blank=True)
     schedule = models.IntegerField(blank=True, null=True, db_index=True)
     run_at = models.DateTimeField(db_index=True)

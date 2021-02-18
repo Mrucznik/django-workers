@@ -45,7 +45,7 @@ class Command(BaseCommand):
                     kwargs = json.loads(task.kwargs)
 
                     try:
-                        registry[task.handler](*args, **kwargs)
+                        task.result = json.dumps(registry[task.handler](*args, **kwargs))
                         task.status = Task.COMPLETED
                     except Exception as e:
                         task.status = Task.FAILED

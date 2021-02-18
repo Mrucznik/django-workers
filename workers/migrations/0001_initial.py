@@ -19,6 +19,7 @@ class Migration(migrations.Migration):
                 ('args', models.TextField(blank=True)),
                 ('kwargs', models.TextField(blank=True)),
                 ('error', models.TextField(blank=True)),
+                ('result', models.JSONField(blank=True)),
                 ('schedule', models.IntegerField(blank=True, db_index=True, null=True)),
                 ('run_at', models.DateTimeField(db_index=True)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
