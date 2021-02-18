@@ -2,7 +2,7 @@
 *.pyc
 *.egg-info
 __pycache__
+venv
 env
 build
 dist
-
