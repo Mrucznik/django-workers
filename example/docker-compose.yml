@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - db-data-example:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+  web:
+    image: example
+    build:
+      context: ./
+      network: host
+    environment:
+      - DJANGO_SECRET_KEY=secret
+    command: |
+      bash -c "pip install -r requirements.txt &&
+                ./manage.py migrate &&
+                ./manage.py runworkers"
+    depends_on:
+      - postgres
+
+volumes:
+  db-data-example:
